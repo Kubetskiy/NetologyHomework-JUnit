@@ -13,7 +13,7 @@ public class CheckingAccount extends Account {
     }
 
     @Override
-    public boolean withdrawFromAccount(double amount) {
+    public boolean pay(double amount) {
         if (accountBalance >= amount) {
             accountBalance -= amount;
             return true;
@@ -23,7 +23,7 @@ public class CheckingAccount extends Account {
 
     @Override
     public boolean transfer(Account account, double amount) {
-        if ((this.accountBalance >= amount) && (account.acceptMoney(amount))) {
+        if ((this.accountBalance >= amount) && (account.add(amount))) {
             this.accountBalance -= amount;
             return true;
         }
@@ -31,7 +31,7 @@ public class CheckingAccount extends Account {
     }
 
     @Override
-    public boolean acceptMoney(double amount) {
+    public boolean add(double amount) {
         accountBalance += amount;
         return true;
     }

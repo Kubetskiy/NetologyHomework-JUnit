@@ -12,22 +12,22 @@ public class Main {
 
         CreditAccount crAcc = new CreditAccount("Почтальон Печкин");
         if (!testClient.addNewAccount(crAcc)) {
-            System.out.println("Блольше счетов добавить нельзя");
+            System.out.println("Больше счетов добавить нельзя");
         }
 
         CheckingAccount chkAcc = new CheckingAccount("Почтальон Печкин");
         if (!testClient.addNewAccount(chkAcc)) {
-            System.out.println("Блольше счетов добавить нельзя");
+            System.out.println("Больше счетов добавить нельзя");
         }
 
         SavingAccount savAcc = new SavingAccount("Почтальон Печкин", 3000, 1500);
         if (!testClient.addNewAccount(savAcc)) {
-            System.out.println("Блольше счетов добавить нельзя");
+            System.out.println("Больше счетов добавить нельзя");
         }
 
         CheckingAccount chkAcc1 = new CheckingAccount("Почтальон Печкин");
         if (!testClient.addNewAccount(chkAcc1)) {
-            System.out.println("Блольше счетов добавить нельзя\n");
+            System.out.println("Больше счетов добавить нельзя\n");
         }
 // Смотрим, что насоздавалось
         System.out.println("\nПеред тестом");
@@ -40,10 +40,10 @@ public class Main {
         System.out.println(testClient);
 // acceptMoney
         System.out.println("\nДва зачисления - $1000 и $888");
-        if(!testClient.acceptMoney(1000)) {
+        if(!testClient.add(1000)) {
             System.out.println("Зачисление неудачно");
         }
-        if(!testClient.acceptMoney(888)) {
+        if(!testClient.add(888)) {
             System.out.println("Зачисление неудачно");
         }
 // Смотрим результат

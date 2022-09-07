@@ -23,7 +23,7 @@ public class Client implements MoneyTarget {
 
     public boolean pay(double amount) {
         for (Account acc : accounts) {
-            if (acc.withdrawFromAccount(amount)) {
+            if (acc.pay(amount)) {
                 return true;
             }
         }
@@ -31,9 +31,9 @@ public class Client implements MoneyTarget {
     }
 
     @Override
-    public boolean acceptMoney(double money) {
+    public boolean add(double money) {
         for (Account acc : accounts) {
-            if (acc.acceptMoney(money)) {
+            if (acc.add(money)) {
                 return true;
             }
         }

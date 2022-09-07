@@ -14,7 +14,7 @@ public class SavingAccount extends Account {
     }
 
     @Override
-    public boolean withdrawFromAccount(double amount) {
+    public boolean pay(double amount) {
         if (amount > (accountBalance - minimumAccountBalance)) {
             return false;
         } else {
@@ -24,7 +24,7 @@ public class SavingAccount extends Account {
     }
     @Override
     public boolean transfer(Account account, double amount) {
-        if ((amount <= (accountBalance - minimumAccountBalance)) && account.acceptMoney(amount)) {
+        if ((amount <= (accountBalance - minimumAccountBalance)) && account.add(amount)) {
             accountBalance -= amount;
             return true;
         }
@@ -32,7 +32,7 @@ public class SavingAccount extends Account {
     }
 
     @Override
-    public boolean acceptMoney(double amount) {
+    public boolean add(double amount) {
         accountBalance += amount;
         return true;
     }

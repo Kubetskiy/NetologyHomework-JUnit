@@ -1,5 +1,5 @@
 package clients;
 
 public interface MoneyTarget {
-    boolean acceptMoney(double money);
+    boolean add(double money);
 }

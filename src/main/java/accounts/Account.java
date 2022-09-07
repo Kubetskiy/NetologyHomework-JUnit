@@ -9,9 +9,9 @@ public abstract class Account implements MoneyTarget {
     protected Account() {
     }
 
-    abstract public boolean withdrawFromAccount(double amount);
+    abstract public boolean pay(double amount);
 
-//    abstract public boolean acceptMoney(double amount);
+    abstract public boolean add(double amount);
 
     abstract public boolean transfer(Account accountTo, double amount);
 }

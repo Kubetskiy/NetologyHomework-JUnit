@@ -12,21 +12,21 @@ public class CreditAccount extends Account {
     }
 
     @Override
-    public boolean withdrawFromAccount(double amount) {
+    public boolean pay(double amount) {
         accountBalance -= amount;
         return true;
     }
 
     @Override
     public boolean transfer(Account account, double amount) {
-        if (account.acceptMoney(amount)) {
-            return withdrawFromAccount(amount);
+        if (account.add(amount)) {
+            return pay(amount);
         }
         return false;
     }
 
     @Override
-    public boolean acceptMoney(double amount) {
+    public boolean add(double amount) {
         if (amount + accountBalance > 0) {
             return false;
         }
