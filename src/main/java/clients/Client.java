@@ -4,7 +4,7 @@ import accounts.*;
 
 public class Client implements MoneyTarget {
     private final String bankClientName;
-    private Account[] accounts;
+    private final Account[] accounts;
 
     public Client(String bankClientName, int maximumNumberOfAccountsAllowed) {
         this.bankClientName = bankClientName;

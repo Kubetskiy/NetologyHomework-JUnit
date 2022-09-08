@@ -1,6 +1,6 @@
 import accounts.CreditAccount;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class CreditAccountTest {
     @Test
@@ -8,6 +8,6 @@ public class CreditAccountTest {
         double testPayment = 1.0;
         var testCreditAccount = new CreditAccount("John Doe");
         // Аккаунт не может иметь положительный баланс
-        Assertions.assertFalse(testCreditAccount.add(testPayment));
+        Assert.assertFalse(testCreditAccount.add(testPayment));
     }
 }

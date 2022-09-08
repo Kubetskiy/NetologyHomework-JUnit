@@ -1,16 +1,28 @@
+import accounts.Account;
 import accounts.CheckingAccount;
 import accounts.CreditAccount;
 import clients.Client;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
 
 public class ClientTest {
+    private Account testAccount1;
+    private Account testAccount2;
+    private Client testClient;
+
+    @Before
+    public void createNewAccountsAndClient() {
+        int maximumNumberOfAccountsInClient = 1;
+        testClient = new Client("John Doe", maximumNumberOfAccountsInClient);
+        testAccount1 = new CheckingAccount("John Doe");
+        testAccount2 = new CreditAccount("John Doe");
+    }
+
     @Test
     public void doNotExceedTheNumberOfAccounts() {
-        var testAccount1 = new CheckingAccount("John Doe");
-        var testAccount2 = new CreditAccount("John Doe");
-        var testClient = new Client("John Doe", 1);
         testClient.addNewAccount(testAccount1);
-        Assertions.assertFalse(testClient.addNewAccount(testAccount2));
+        Assert.assertFalse(testClient.addNewAccount(testAccount2));
     }
 }
